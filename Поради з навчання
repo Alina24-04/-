@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Власні поради з навчання</title>
+<style>
+:root { --bg: #f7fafc; --card: #ffffff; --accent: #2563eb; --muted: #6b7280; }
+body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; margin: 0; background: var(--bg); color: #111827; }
+.container { max-width: 900px; margin: 48px auto; padding: 24px; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+h1 { margin: 0; font-size: 1.5rem; }
+nav a { margin-left: 12px; text-decoration: none; color: var(--muted); font-size: 0.95rem; }
+nav a:hover { color: var(--accent); }
+.card { background: var(--card); border-radius: 12px; padding: 18px; box-shadow: 0 6px 18px rgba(16,24,40,0.06); margin-top: 18px; }
+.actions { margin-top: 16px; display: flex; gap: 8px; }
+button { border: 0; padding: 10px 14px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-ghost { background: transparent; color: var(--muted); }
+footer { margin-top: 28px; text-align: center; color: var(--muted); font-size: 0.9rem; }
+pre { background: #0f172a; color: #e6eef8; padding: 12px; border-radius: 8px; overflow: auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>Поради для навчання</h1>
+<nav>
+<a href="#time-org">Організація часу</a>
+<a href="#during-learning">Під час навчання</a>
+<a href="#after-learning">Після навчання</a>
+<a href="#techniques">Метод запам'ятовування</a>
+</nav>
+</header>
+
+<main style="margin-top:18px">
+<section class="card">
+<h2 id="welcome">Вітаємо!</h2>
+<p style="color:var(--muted)">Ця сторінка навчить вас, як правильно організовувати час під час та після навчання, а також допоможе опанувати методи запам'ятовування.</p>
+<div class="actions">
+<button class="btn-primary" id="greetBtn">Привітатися</button>
+<button class="btn-ghost" id="showCode">Показати зразок HTML</button>
+</div>
+<div id="output" style="margin-top:14px"></div>
+<!-- Блок коду розміщено одразу під кнопками -->
+<pre id="codePreview" style="display:none; margin-top:14px">&lt;!-- Приклад: розмістіть ваш фрагмент тут --&gt;&#10;&lt;p&gt;Ласкаво просимо!&lt;/p&gt;</pre>
+</section>
+
+<!-- Блок 1: Організація часу -->
+<section class="card" id="time-org">
+<h3>Організація часу</h3>
+<p style="color:var(--muted)">Використовуйте техніку Pomodoro: 25 хвилин зосередженої роботи та 5 хвилин відпочинку.</p>
+</section>
+
+<!-- Блок 2: Під час навчання -->
+<section class="card" id="during-learning">
+<h3>Під час навчання</h3>
+<p style="color:var(--muted)">Вимкніть сповіщення на телефоні та приберіть зайві предмети з робочого столу.</p>
+</section>
+
+<!-- Блок 3: Після навчання -->
+<section class="card" id="after-learning">
+<h3>Після навчання</h3>
+<p style="color:var(--muted)">Робіть короткий підсумок пройденого матеріалу та обов'язково відпочивайте.</p>
+</section>
+
+<!-- Блок 4: Метод запам'ятовування -->
+<section class="card" id="techniques">
+<h3>Метод запам'ятовування</h3>
+<p style="color:var(--muted)">Використовуйте метод інтервальних повторень та ментальні карти (Mind Maps).</p>
+</section>
+
+<section class="card" id="about">
+<h3>Про цю сторінку</h3>
+<p style="color:var(--muted)">Створена для допомоги у систематизації ваших знань.</p>
+</section>
+</main>
+
+<footer>
+<small>Згенеровано: <span id="now"></span></small>
+</footer>
+</div>
+
+<script>
+// Відображення поточної дати та часу
+document.getElementById('now').textContent = new Date().toLocaleString('uk-UA');
+
+// Обробка кнопки привітання
+document.getElementById('greetBtn').addEventListener('click', function(){
+const out = document.getElementById('output');
+out.innerHTML = '<strong>Привіт!</strong> Раді вас бачити.<br>' +
+'Натисніть кнопку "Показати зразок HTML", щоб переглянути приклад.';
+});
+
+// Перемикач відображення коду
+document.getElementById('showCode').addEventListener('click', function(){
+const pre = document.getElementById('codePreview');
+pre.style.display = pre.style.display === 'none' ? 'block' : 'none';
+});
+</script>
+</body>
+</html>
